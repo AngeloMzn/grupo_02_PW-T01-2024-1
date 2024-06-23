@@ -33,6 +33,13 @@ body {
   background-size: cover;
 
 }
+/* 
+.spinner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+} */
 
 .container-auth{
   background-color: #348e91e3;

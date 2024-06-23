@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
+import NexAuthSessionProvider from "@/providers/sessionProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,8 +19,8 @@ export default function RootLayout({
     <html lang="pt-br">
       <body className="body-home {inter.className}">
         { <Navbar isLoggedIn={false} />}
-        {children}
-        </body>
+          {children}
+      </body>
     </html>
   );
 }

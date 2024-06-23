@@ -1,9 +1,11 @@
+import { sign } from "crypto";
 import { NextResponse } from "next/server";
-import registerAction from "./registerAction";
+import loginAction from "./loginAction";
+
 
 export async function POST(request: Request) {
     try {
-        const data = await registerAction(await request.json());
+        const data = await loginAction(await request.json());
         return NextResponse.json(data);
     } catch (error) {
         console.error(error);
