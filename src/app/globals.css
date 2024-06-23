@@ -26,6 +26,22 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+.body-home{
+  padding: 0;
+  margin: 0;
+  background-image: url(../../public/pexels-monstera-production-5635114.jpg);
+  background-size: cover;
+
+}
+
+.container-auth{
+  background-color: #348e91e3;
+}
+.btn-auth{
+  background-color: #000000fa;
+  color: white;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
