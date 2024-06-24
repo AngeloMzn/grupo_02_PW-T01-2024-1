@@ -1,18 +1,18 @@
-'use client'
+"use client";
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import LoggedUserNav from './LoggedUserNav';
 import ExternalUserNav from './ExternalUserNav';
-import { Content } from 'next/font/google';
+import { useSession } from 'next-auth/react';
 
-export default function Navbar({ isLoggedIn }: { isLoggedIn: boolean }) {
+export default function Navbar() {
+  const { data: session, status } = useSession();
+  const isLoggedIn = status === "authenticated";
 
   return (
-    <AppBar sx={{
-      backgroundColor: '#348E91',
-    }} position="static">
+    <AppBar sx={{ backgroundColor: '#348E91' }} position="static">
       <div className='mx-2'>
         <Toolbar className='w-100' disableGutters>
           <Typography
@@ -25,7 +25,7 @@ export default function Navbar({ isLoggedIn }: { isLoggedIn: boolean }) {
               height: '50px',
               paddingTop: '10px',
               paddingLeft: '2px',
-               display: { xs: 'none', md: 'flex' },
+              display: { xs: 'none', md: 'flex' },
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',

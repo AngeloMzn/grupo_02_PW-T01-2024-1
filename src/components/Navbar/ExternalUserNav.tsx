@@ -15,9 +15,24 @@ export default function ExternalUserNav() {
     function login() {
         router.push('/login');
     }
-    const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-    const handleCloseNavMenu = () => {
-        setAnchorElNav(null);
+
+    const goto = (page: string) => {
+        let route = '';
+        switch (page) {
+            case 'sobre nós':
+                route = '/aboutUs';
+                break;
+            case 'tutorial':
+                route = '/tutorial';
+                break;
+            case 'contato':
+                route = '/contact';
+                break;
+            default:
+                route = '/';
+                break;
+        }
+        router.push(route);
     };
 
     return (
@@ -26,7 +41,7 @@ export default function ExternalUserNav() {
                 {pages.map((page) => (
                     <Button
                         key={page}
-                        onClick={handleCloseNavMenu}
+                        onClick={() => goto(page)}
                         sx={{ my: 2, color: 'white', display: 'block' }}
                     >
                         {page}

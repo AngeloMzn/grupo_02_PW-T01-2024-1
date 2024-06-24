@@ -18,8 +18,10 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className="body-home {inter.className}">
-        { <Navbar isLoggedIn={false} />}
-          {children}
+      <NexAuthSessionProvider>
+        <Navbar></Navbar>
+        {children}
+      </NexAuthSessionProvider>
       </body>
     </html>
   );
