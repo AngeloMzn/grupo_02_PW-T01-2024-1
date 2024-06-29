@@ -5,8 +5,8 @@ import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import React from "react";
 
-const settings = ['Profile', 'Logout'];
-const pages = ['calendário', 'eventos'];
+const settings = ['Perfil', 'Logout'];
+const pages = ['Calendário', 'Eventos', 'Localização'];
 
 export default function LoggedUserNav() {
   const router = useRouter();
@@ -29,7 +29,7 @@ export default function LoggedUserNav() {
   const actionSetting = (setting: string) => () => {
     let route = '';
     switch (setting) {
-        case 'Profile':
+        case 'Perfil':
             route = '/profile';
             break;
         case 'Logout':
@@ -46,11 +46,14 @@ export default function LoggedUserNav() {
   const actionPage = (page: string) => () => {
     let route = '';
     switch (page) {
-        case 'calendário':
+        case 'Calendário':
             route = '/calendar';
             break;
-        case 'eventos':
+        case 'Eventos':
             route = '/events';
+            break;
+        case 'Localização':
+            route = '/location';
             break;
         default:
             route = '/';
@@ -95,7 +98,7 @@ export default function LoggedUserNav() {
           onClose={handleCloseUserMenu}
         >
           {settings.map((setting) => (
-            <MenuItem key={setting} onClick={actionSetting(setting)}>{/* Corrigido para passar o parâmetro `setting` */}
+            <MenuItem key={setting} onClick={actionSetting(setting)}>{}
               <Typography textAlign="center">{setting}</Typography>
             </MenuItem>
           ))}

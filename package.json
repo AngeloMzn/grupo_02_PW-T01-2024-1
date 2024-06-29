@@ -15,6 +15,7 @@
     "@mui/icons-material": "^5.15.20",
     "@mui/material": "^5.15.20",
     "@prisma/client": "^5.15.1",
+    "@syncfusion/ej2-react-schedule": "^26.1.39",
     "axios": "^1.7.2",
     "bcrypt": "^5.1.1",
     "next": "14.2.4",
