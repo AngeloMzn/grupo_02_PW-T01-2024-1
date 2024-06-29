@@ -1,15 +1,17 @@
-"use  client"
-import {ScheduleComponent} from "@syncfusion/ej2-react-schedule";
+'use client'
+import {
+    Week, Month, Agenda, ScheduleComponent, ViewsDirective, ViewDirective, EventSettingsModel, Inject, Resize, DragAndDrop
+} from '@syncfusion/ej2-react-schedule';
+import {timelineResourceData} from "@/app/(loggedUserContent)/calendar/datasSource";
+import CalendarComponent from "@/components/Calendar/CalendarComponent";
+import InstagramIcon from '@mui/icons-material/Instagram';
 
-
-// @ts-ignore
-export default function calendar(){
-
-    const data = null
-
-    return(
+export default function calendar() {
+    return (
         <>
-            <ScheduleComponent eventSettings={data} ></ScheduleComponent>
+            <div className={"flex justify-center items-center bg-black bg-opacity-50 mt-10"}>
+                <CalendarComponent />
+            </div>
         </>
-    );
+    )
 }

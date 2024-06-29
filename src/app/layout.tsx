@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import NexAuthSessionProvider from "@/providers/sessionProvider";
+import {registerLicense} from "@syncfusion/ej2-base";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
   title: "PocketCalendar",
 };
 
-export default function RootLayout({
+    export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

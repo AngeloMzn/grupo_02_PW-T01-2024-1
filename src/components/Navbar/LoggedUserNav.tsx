@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import React from "react";
 
 const settings = ['Perfil', 'Logout'];
-const pages = ['Calendário', 'Eventos', 'Localização'];
+const pages = ['Calendário'];
 
 export default function LoggedUserNav() {
   const router = useRouter();
@@ -48,12 +48,6 @@ export default function LoggedUserNav() {
     switch (page) {
         case 'Calendário':
             route = '/calendar';
-            break;
-        case 'Eventos':
-            route = '/events';
-            break;
-        case 'Localização':
-            route = '/location';
             break;
         default:
             route = '/';
