@@ -24,18 +24,7 @@ export default async function registerAction(data: UserData) {
             data: {
                 name: data.name,
                 email: data.email,
-                password: hashedPassword, 
-                address: {
-                    create: {
-                        street: "Rua 1",
-                        city: "Cidade 1",
-                        state: "Estado 1",
-                        cep: "12345678",
-                        number: "123",
-                        neighborhood: "Bairro 1",
-                        country: "País 1"
-                    }
-                }
+                password: hashedPassword,
             }
         });
 
