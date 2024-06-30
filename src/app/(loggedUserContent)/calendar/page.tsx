@@ -1,8 +1,21 @@
 'use client'
 import CalendarComponent from "@/components/Calendar/CalendarComponent";
-
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import { use, useEffect } from "react";
 
 export default function calendar() {
+    const { data: session, status } = useSession();
+    const isLoggedIn = status === "authenticated";
+    const router = useRouter();
+
+    useEffect(() => {
+        if (!isLoggedIn) {
+            router.push('/');
+        }
+    });
+    
+    
     return (
         <>
             <div>
