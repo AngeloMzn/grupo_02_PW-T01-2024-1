@@ -20,6 +20,6 @@ export async function PUT(request: Request) {
         return NextResponse.json(data, { status: 200 });
     } catch (error) {
         console.error(error);
-        return NextResponse.json({ error: 'Error updating event' }, { status: 500 });
+        return NextResponse.json({ error: 'Erro ao atualizar usuário' }, { status: 500 });
     }
 }
