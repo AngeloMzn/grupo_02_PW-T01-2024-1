@@ -23,7 +23,7 @@ interface EventData {
     RecurrenceRule?: string;
     RecurrenceID?: number;
     FollowingID?: number;
-    UserEmail?: string; // Usaremos o email do usuário
+    UserEmail?: string; 
 }
 
 export default function CalendarComponent() {
@@ -68,7 +68,7 @@ export default function CalendarComponent() {
                 const updatedEvents = events.map(event =>
                     event.Id === data.Id ? response.data : event
                 );
-                setEvents(updatedEvents); // Atualiza a lista local de eventos
+                setEvents(updatedEvents); 
                 toast.success('Evento atualizado com sucesso.');
             } catch (error) {
                 console.error('Erro ao atualizar evento:', error);
@@ -79,7 +79,7 @@ export default function CalendarComponent() {
                 const data: any = {Id: args.deletedRecords[0].Id}
                 await axios.delete(`/api/events/`, {data});
                 const updatedEvents = events.filter(event => event.Id !== args.deletedRecords[0].Id);
-                setEvents(updatedEvents); // Remove o evento da lista local
+                setEvents(updatedEvents); 
                 toast.success('Evento excluído com sucesso.');
             } catch (error) {
                 console.error('Erro ao excluir evento:', error);
@@ -103,7 +103,7 @@ export default function CalendarComponent() {
                 currentView="Month"
                 selectedDate={new Date()}
                 eventSettings={eventSettings}
-                actionBegin={handleActionBegin} // Função para lidar com ações de criação, atualização e exclusão de eventos
+                actionBegin={handleActionBegin} 
             >
                 <ViewsDirective>
                     <ViewDirective option="Week" />

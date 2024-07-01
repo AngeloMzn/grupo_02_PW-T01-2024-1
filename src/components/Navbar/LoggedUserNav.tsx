@@ -1,18 +1,28 @@
 'use client';
 import { Avatar, Box, Button, IconButton, Menu, MenuItem, Tooltip, Typography } from "@mui/material";
 import axios from "axios";
-import { signOut } from "next-auth/react";
+import Email from "next-auth/providers/email";
+import {signOut, useSession} from "next-auth/react";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 const settings = ['Perfil', 'Logout'];
 const pages = ['Calendário'];
 
+interface User {
+    id: number;
+    name: string;
+    email: string;
+    password: string;
+}
+
 export default function LoggedUserNav() {
   const router = useRouter();
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
-  
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
+    const { data: session, status } = useSession();
+    const [user, setUser] = useState<User>();
+    
+    const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
   };
 
@@ -55,7 +65,6 @@ export default function LoggedUserNav() {
     }
     router.push(route);
   };
-
   return (
     <>
       <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
