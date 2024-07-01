@@ -1,36 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Para rodar o projeto é necessário seguir os passos abaixo:  
+1 - criar um arquivo dotenv com as seguintes variaveis:  
+        DATABASE_URL="mysql://root:senha@localhost:3306/pocket_calendar"
+        NEXTAUTH_SECRET="dnjwpfvih43ei02=-r23r=fjrigj39ghdfubvnlewrhfh23hrufhwe94r44334;sdf/sd"
+        NEXTAUTH_URL="http://localhost:3000/"
+        SYNCFUSION_KEY="Ngo9BigBOggjHTQxAR8/V1NCaF5cXmpCeUx0THxbf1x0ZFBMYF9bQH5PIiBoS35RckVlW3Zfd3ZQRmhUVER+"
 
-## Getting Started
+    No "DATABASE_URL" é necessário configurar seu usuário e senha MYSQL para poder realizar a conexão, por padrão deixei o root e depois do ":" colocar a senha   
+    definida no seu banco de dados
 
-First, run the development server:
+2 - rodar o npm i na raiz do projeto  
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+3 - rodar o comando "npx prisma db push"   
+    esse comando cria o banco de dados no MYSQL  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+OBS: Caso seu banco de dados favorito não for o MYSQL deixarei algumas opções de drivers de bancos mais utilizados e pode ser que você ache o seu, caso não encontrar verificar na documentação do prisma(https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch):  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+DATABASE_URL=postgresql://test:test@localhost:5432/test
+DATABASE_URL="sqlserver://localhost:1433;database=mydb;user=sa;password=r@ndomP@$$w0rd;trustServerCertificate=true"
+DATABASE_URL="mongodb+srv://test:test@cluster0.ns1yp.mongodb.net/myFirstDatabase"
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    
